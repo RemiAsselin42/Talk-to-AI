@@ -1,0 +1,32 @@
+{
+  "name": "my-electron-express-app",
+  "version": "1.0.0",
+  "description": "An Electron application with an Express server for speech-to-text and text-to-speech services.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "build": "electron-builder"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "electron": "^25.0.0"
+  },
+  "devDependencies": {
+    "electron-builder": "^24.0.0"
+  },
+  "homepage": ".",
+  "author": "Your Name",
+  "license": "MIT",
+  "build": {
+    "appId": "com.example.myelectronexpressapp",
+    "productName": "MyElectronExpressApp",
+    "files": [
+      "src/**/*",
+      "certs/**/*"
+    ],
+    "directories": {
+      "buildResources": "build"
+    }
+  }
+}

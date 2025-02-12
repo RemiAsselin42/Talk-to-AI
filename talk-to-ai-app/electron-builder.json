@@ -1,0 +1,29 @@
+{
+  "appId": "com.example.my-electron-express-app",
+  "productName": "My Electron Express App",
+  "files": [
+    "src/**/*",
+    "certs/**/*",
+    "package.json"
+  ],
+  "directories": {
+    "output": "dist"
+  },
+  "win": {
+    "target": "nsis",
+    "icon": "path/to/icon.ico"
+  },
+  "mac": {
+    "target": "dmg",
+    "icon": "path/to/icon.icns"
+  },
+  "linux": {
+    "target": "AppImage",
+    "icon": "path/to/icon.png"
+  },
+  "nsis": {
+    "oneClick": true,
+    "perMachine": true,
+    "allowToChangeInstallationDirectory": true
+  }
+}
