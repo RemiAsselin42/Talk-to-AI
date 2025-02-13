@@ -10,18 +10,18 @@
     <meta charset="UTF-8" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self'; connect-src 'self';"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self'; connect-src 'self' https://api.deepseek.com;"
     />
   </head>
   <body>
     <div class="container">
       <div class="audio-controls">
         <div class="select-wrapper">
-          <label for="inputDevices">Microphone:</label>
+          <label for="inputDevices"><i class="fas fa-microphone"></i></label>
           <select id="inputDevices"></select>
         </div>
         <div class="select-wrapper">
-          <label for="outputDevices">Haut-parleur:</label>
+          <label for="outputDevices"><i class="fas fa-volume-up"></i></label>
           <select id="outputDevices"></select>
         </div>
       </div>
@@ -32,10 +32,23 @@
         <div class="volume-meter">
           <div class="volume-bar"></div>
         </div>
+        <button id="toggle-voice-button">
+          <i class="fas fa-venus"></i>
+        </button>
       </div>
       <div id="status"></div>
       <div id="conversation"></div>
+      <div class="input-container">
+        <input
+          type="text"
+          id="textInput"
+          placeholder="Entrez votre texte ici"
+        />
+        <button id="sendButton"><i class="fas fa-paper-plane"></i></button>
+      </div>
     </div>
-    <script src="app.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/openai/dist/index.min.js"></script>
+    <script src="app.js" type="module"></script>
   </body>
 </html>

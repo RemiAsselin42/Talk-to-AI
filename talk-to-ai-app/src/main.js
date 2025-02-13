@@ -10,7 +10,7 @@ app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required');
 
 function createWindow() {
     const win = new BrowserWindow({
-        width: 600,
+        width: 700,
         height: 800,
         webPreferences: {
             nodeIntegration: true,
@@ -22,6 +22,12 @@ function createWindow() {
             }
         }
     });
+
+    // Injecter la clé API dans le localStorage
+    win.webContents.executeJavaScript(`
+        localStorage.setItem('DEEPSEEK_API_KEY', '${process.env.DEEPSEEK_API_KEY}');
+        window.DEEPSEEK_API_KEY = localStorage.getItem('DEEPSEEK_API_KEY');
+    `);
 
     // Charger la page via HTTPS
     win.loadURL('https://localhost:3000/index.html');
